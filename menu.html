@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link
+    rel="canonical"
+    href="https://wingzitizofficial.com/menu.html"
+>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Browse the Wingz It Iz menu for Chicago, Alsip, and Hickory Hills."
+    >
+
+    <meta property="og:type" content="website">
+
+<meta property="og:title"
+content="Wingz It Iz | Chicago's Home of the Famous Garlic Wingz">
+
+<meta property="og:description"
+content="Family-owned restaurant serving fresh Whole Wingz, Party Wingz, seafood, burgers, Philly sandwiches, wraps, rice bowls and more since 1999.">
+
+<meta property="og:image"
+content="https://wingzitizofficial.com/assets/logo.jpg">
+
+<meta property="og:url"
+content="https://wingzitizofficial.com/about.html">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:title"
+content="Wingz It Iz">
+
+<meta name="twitter:description"
+content="Fresh made-to-order wings, seafood and sandwiches since 1999.">
+
+<meta name="twitter:image"
+content="https://wingzitizofficial.com/assets/logo.jpg">
+
+    <title>Menu | Wingz It Iz</title>
+
+    <link rel="icon" href="assets/logo.jpg">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container nav-wrap">
+
+            <a class="brand" href="index.html">
+                <img src="assets/logo.jpg" alt="Wingz It Iz">
+
+                <span>
+                    <strong class="brand-name">
+                        <span class="brand-red">Wingz</span>
+                        <span class="brand-blue">It</span>
+                        <span class="brand-red">Iz</span>
+                    </strong>
+
+                    <small>Home of the Famous Garlic Wingz</small>
+                </span>
+            </a>
+
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-label="Open navigation"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="primary-nav">
+                <a href="index.html">Home</a>
+                <a class="active" href="menu.html">Menu</a>
+                <a href="about.html">About Us</a>
+                <a href="locations.html">Hours & Locations</a>
+                <a href="catering.html">Catering</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main id="main">
+
+<section class="page-hero menu-page-hero">
+
+    <div class="container menu-hero-layout">
+
+        <div class="menu-hero-copy">
+
+            <p class="eyebrow">
+                Fresh • Made To Order
+            </p>
+
+            <h1 id="menu-hero-title">
+                Chicago Menu
+            </h1>
+
+            <p id="menu-hero-text">
+                View the full Chicago menu.
+            </p>
+
+            <div class="menu-hero-actions">
+
+                <a
+                    class="menu-catering-callout"
+                    href="catering.html"
+                >
+                    <span
+                        class="menu-catering-icon"
+                        aria-hidden="true"
+                    >
+                        ✦
+                    </span>
+
+                    <span>
+                        <strong>
+                            We Cater
+                        </strong>
+
+                        <small>
+                            Parties, offices and events
+                        </small>
+                    </span>
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="menu-hero-photo">
+
+            <img
+                id="menu-location-photo"
+                src="assets/photos/chicago.png"
+                alt="Wingz It Iz Chicago location"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+        <section
+            class="menu-switcher"
+            aria-label="Choose a menu location"
+        >
+            <div class="container">
+                <button
+                    class="location-btn active"
+                    type="button"
+                    data-location="chicago"
+                    aria-selected="true"
+                >
+                    Chicago
+                </button>
+
+                <button
+                    class="location-btn"
+                    type="button"
+                    data-location="alsip"
+                    aria-selected="false"
+                >
+                    Alsip
+                </button>
+
+                <button
+                    class="location-btn"
+                    type="button"
+                    data-location="hickory"
+                    aria-selected="false"
+                >
+                    Hickory Hills
+                </button>
+            </div>
+        </section>
+
+        <nav
+            class="sticky-menu"
+            aria-label="Menu categories"
+        >
+            <div class="container" id="menu-category-links"></div>
+        </nav>
+
+        <!-- menu-data.js builds the selected location here -->
+        <section class="menu-render-area">
+            <div class="container" id="menu-content"></div>
+        </section>
+
+        <div
+    id="tv-menu-modal"
+    class="tv-menu-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="tv-menu-modal-title"
+    hidden
+>
+    <div
+        class="tv-menu-modal-backdrop"
+        data-close-tv-modal
+    ></div>
+
+    <div class="tv-menu-modal-panel">
+
+        <button
+            class="tv-menu-modal-close"
+            type="button"
+            aria-label="Close TV menu options"
+            data-close-tv-modal
+        >
+            ×
+        </button>
+
+        <div class="tv-menu-modal-heading">
+            <p class="eyebrow">Digital Menu Display</p>
+
+            <h2 id="tv-menu-modal-title">
+                Choose How to Display the Menu
+            </h2>
+
+            <p>
+                Select a display mode and the number of menu pages.
+            </p>
+        </div>
+
+        <form id="tv-menu-options-form">
+
+            <fieldset class="tv-option-group">
+                <legend>Display Mode</legend>
+
+                <label class="tv-option-card">
+                    <input
+                        type="radio"
+                        name="tv-mode"
+                        value="auto"
+                        checked
+                    >
+
+                    <span class="tv-option-card-copy">
+                        <strong>Automatic</strong>
+                        <small>
+                            Pages rotate automatically every 15 seconds.
+                        </small>
+                    </span>
+                </label>
+
+                <label class="tv-option-card">
+                    <input
+                        type="radio"
+                        name="tv-mode"
+                        value="static"
+                    >
+
+                    <span class="tv-option-card-copy">
+                        <strong>Static</strong>
+                        <small>
+                            Keep one page displayed until manually changed.
+                        </small>
+                    </span>
+                </label>
+            </fieldset>
+
+            <div
+                id="tv-static-page-options"
+                class="tv-option-group tv-static-page-options"
+                hidden
+            >
+                <label for="tv-start-page">
+                    Static Page
+                </label>
+
+                <select id="tv-start-page">
+                    <option value="1">Page 1</option>
+                    <option value="2">Page 2</option>
+                    <option value="3">Page 3</option>
+                </select>
+            </div>
+
+            <div class="tv-menu-modal-actions">
+
+                <button
+                    class="tv-menu-cancel-btn"
+                    type="button"
+                    data-close-tv-modal
+                >
+                    Cancel
+                </button>
+
+                <button
+                    class="tv-menu-launch-btn"
+                    type="submit"
+                >
+                    Open TV Menu
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+    </main>
+
+    <section class="menu-disclaimer">
+    <p>
+        <strong>Please Note:</strong>
+        Menu items, pricing, availability, and specials are subject to change without notice.
+    </p>
+
+    <p>
+        <strong>Halal Friendly:</strong>
+        We offer a variety of halal-friendly menu options. Please ask our staff if you have any questions about ingredients or preparation.
+    </p>
+</section>
+
+    <footer>
+        <div class="container footer-grid">
+
+            <div class="brand footer-brand">
+                <img src="assets/logo.jpg" alt="Wingz It Iz">
+
+                <span>
+                    <strong class="brand-name brand-name-light">
+                        <span class="brand-red">Wingz</span>
+                        <span class="brand-blue">It</span>
+                        <span class="brand-red">Iz</span>
+                    </strong>
+
+                    <small>Home of the Famous Garlic Wingz</small>
+                </span>
+            </div>
+
+            <div>
+                <b>Pages</b>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="locations.html">Locations</a>
+                <a href="catering.html">Catering</a>
+            </div>
+
+            <div>
+                <b>Locations</b>
+                <p>Chicago</p>
+                <p>Alsip</p>
+                <p>Hickory Hills</p>
+            </div>
+
+                        <div>
+
+                <b>Hours Note</b>
+
+                <p>
+                    Holiday hours may vary.
+                    Call ahead to confirm.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="container footer-bottom">
+            <span>
+                &copy;
+                <span data-year></span>
+                Wingz It Iz. All Rights Reserved.
+            </span>
+
+        </div>
+    </footer>
+
+<script
+    defer
+    src="menu-data.js"
+></script>
+
+<script
+    defer
+    src="menu.js"
+></script>
+  
+</body>
+</html>

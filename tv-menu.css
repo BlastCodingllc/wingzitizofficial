@@ -1,0 +1,3387 @@
+/* =========================================================
+   WINGZ IT IZ — CLEAN DIGITAL MENU
+========================================================= */
+
+:root {
+    --red: #c5161d;
+    --blue: #173f86;
+    --yellow: #f2c230;
+    --black: #161616;
+    --gray: #656565;
+    --light: #f5f5f5;
+    --line: #dddddd;
+    --white: #ffffff;
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+    background: var(--white);
+    color: var(--black);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================================
+   BOARD
+========================================================= */
+
+.tv-board {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    width: 100vw;
+    height: 100vh;
+    background: var(--white);
+}
+
+/* =========================================================
+   SMALLER, CLEANER HEADER
+========================================================= */
+
+.tv-header {
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) auto minmax(180px, 1fr);
+    align-items: center;
+    gap: 28px;
+    min-height: 95px;
+    padding: 14px 42px;
+    border-bottom: 4px solid var(--yellow);
+    background: var(--white);
+}
+
+.tv-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.tv-brand img {
+    width: 72px;
+    height: 72px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.tv-brand-copy {
+    display: flex;
+    flex-direction: column;
+}
+
+.tv-brand-name {
+    display: flex;
+    gap: 5px;
+    white-space: nowrap;
+    font-size: clamp(25px, 2.1vw, 40px);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+}
+
+.brand-red {
+    color: var(--red);
+}
+
+.brand-blue {
+    color: var(--blue);
+}
+
+.tv-tagline {
+    margin-top: 4px;
+    color: var(--gray);
+    font-size: clamp(11px, 0.85vw, 16px);
+    font-weight: 700;
+}
+
+.tv-location {
+    text-align: center;
+}
+
+.tv-location-label {
+    display: none;
+}
+
+.tv-location h1 {
+    margin: 0;
+    color: var(--blue);
+    font-size: clamp(28px, 2.5vw, 48px);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.tv-page-status {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+}
+
+.tv-page-status span {
+    color: var(--gray);
+    font-size: clamp(10px, 0.75vw, 14px);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.tv-page-status strong {
+    color: var(--black);
+    font-size: clamp(18px, 1.45vw, 28px);
+    font-weight: 900;
+}
+
+/* =========================================================
+   MAIN PAGE AREA
+========================================================= */
+
+.tv-page {
+    min-height: 0;
+    overflow: hidden;
+    padding: 22px 42px 18px;
+    opacity: 1;
+    transition: opacity 250ms ease;
+}
+
+.tv-page.is-changing {
+    opacity: 0;
+}
+
+.tv-page-inner {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    align-items: start;
+    gap: 30px;
+}
+
+.tv-page-inner.columns-1 {
+    grid-template-columns: 1fr;
+}
+
+.tv-page-inner.columns-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.tv-page-inner.columns-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.tv-page-inner.columns-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* =========================================================
+   SECTIONS — NO LARGE CARDS
+========================================================= */
+
+.tv-section {
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+}
+
+.tv-section + .tv-section {
+    border-left: 1px solid var(--line);
+    padding-left: 28px;
+}
+
+.tv-section-header {
+    margin-bottom: 13px;
+    padding-bottom: 8px;
+    border-bottom: 4px solid var(--yellow);
+}
+
+.tv-section-title {
+    margin: 0;
+    color: var(--blue);
+    font-size: clamp(24px, 1.85vw, 38px);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.tv-section-description,
+.tv-note {
+    margin: 6px 0 0;
+    color: var(--gray);
+    font-size: clamp(11px, 0.78vw, 15px);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* =========================================================
+   GROUPS
+========================================================= */
+
+.tv-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    align-content: start;
+    gap: 18px 24px;
+}
+
+.tv-group {
+    min-width: 0;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+}
+
+.tv-group-title {
+    margin: 0 0 8px;
+    color: var(--red);
+    font-size: clamp(17px, 1.22vw, 25px);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.tv-subheading {
+    margin: 13px 0 7px;
+    color: var(--blue);
+    font-size: clamp(14px, 1vw, 20px);
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.tv-group-section + .tv-group-section {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+}
+
+/* =========================================================
+   MENU ITEMS
+========================================================= */
+
+.tv-items {
+    display: grid;
+    align-content: start;
+    gap: 0;
+}
+
+.tv-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: 10px;
+    min-height: 28px;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: clamp(13px, 0.93vw, 19px);
+    line-height: 1.12;
+}
+
+.tv-item-name {
+    min-width: 0;
+    color: var(--black);
+    font-weight: 800;
+}
+
+.tv-item-price {
+    color: var(--red);
+    font-weight: 900;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.tv-item.has-long-price {
+    grid-template-columns: 1fr;
+    gap: 2px;
+}
+
+.tv-item.has-long-price .tv-item-price {
+    color: var(--red);
+    font-size: 0.9em;
+    text-align: left;
+    white-space: normal;
+}
+
+/* =========================================================
+   TAGS
+========================================================= */
+
+.tv-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px 10px;
+}
+
+.tv-tag {
+    display: inline;
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--black);
+    font-size: clamp(12px, 0.82vw, 16px);
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.tv-tag:not(:last-child)::after {
+    margin-left: 10px;
+    color: var(--red);
+    content: "•";
+}
+
+/* =========================================================
+   LISTS
+========================================================= */
+
+.tv-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5px 18px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.tv-list li {
+    position: relative;
+    padding-left: 12px;
+    color: var(--black);
+    font-size: clamp(12px, 0.85vw, 17px);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.tv-list li::before {
+    position: absolute;
+    left: 0;
+    color: var(--red);
+    content: "•";
+}
+
+/* =========================================================
+   COMBOS
+========================================================= */
+
+.tv-combo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+    gap: 24px;
+}
+
+.tv-combo-card {
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+}
+
+.tv-combo-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 9px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid var(--line);
+}
+
+.tv-combo-heading h3 {
+    margin: 0;
+    color: var(--red);
+    font-size: clamp(18px, 1.3vw, 26px);
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.tv-combo-heading strong {
+    color: var(--blue);
+    font-size: clamp(18px, 1.3vw, 26px);
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.tv-family-specials {
+    margin-top: 22px;
+    padding: 14px 0 0;
+    border: 0;
+    border-top: 4px solid var(--yellow);
+    border-radius: 0;
+}
+
+/* =========================================================
+   DENSITY
+========================================================= */
+
+.tv-page.is-compact .tv-page-inner {
+    gap: 22px;
+}
+
+.tv-page.is-compact .tv-section + .tv-section {
+    padding-left: 20px;
+}
+
+.tv-page.is-compact .tv-section-title {
+    font-size: clamp(21px, 1.55vw, 31px);
+}
+
+.tv-page.is-compact .tv-group-title {
+    font-size: clamp(15px, 1.05vw, 21px);
+}
+
+.tv-page.is-compact .tv-item {
+    min-height: 24px;
+    padding: 3px 0;
+    font-size: clamp(11px, 0.78vw, 16px);
+}
+
+.tv-page.is-compact .tv-note,
+.tv-page.is-compact .tv-section-description,
+.tv-page.is-compact .tv-tag,
+.tv-page.is-compact .tv-list li {
+    font-size: clamp(10px, 0.68vw, 14px);
+}
+
+.tv-page.is-ultra-compact .tv-page-inner {
+    gap: 18px;
+}
+
+.tv-page.is-ultra-compact .tv-section + .tv-section {
+    padding-left: 16px;
+}
+
+.tv-page.is-ultra-compact .tv-section-header {
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+    border-bottom-width: 3px;
+}
+
+.tv-page.is-ultra-compact .tv-section-title {
+    font-size: clamp(18px, 1.27vw, 26px);
+}
+
+.tv-page.is-ultra-compact .tv-group-title,
+.tv-page.is-ultra-compact .tv-combo-heading h3,
+.tv-page.is-ultra-compact .tv-combo-heading strong {
+    font-size: clamp(13px, 0.88vw, 18px);
+}
+
+.tv-page.is-ultra-compact .tv-subheading {
+    margin: 9px 0 5px;
+    font-size: clamp(11px, 0.72vw, 15px);
+}
+
+.tv-page.is-ultra-compact .tv-item {
+    min-height: 20px;
+    padding: 2px 0;
+    font-size: clamp(9px, 0.62vw, 13px);
+    line-height: 1.05;
+}
+
+.tv-page.is-ultra-compact .tv-note,
+.tv-page.is-ultra-compact .tv-section-description,
+.tv-page.is-ultra-compact .tv-tag,
+.tv-page.is-ultra-compact .tv-list li {
+    font-size: clamp(8px, 0.54vw, 11px);
+}
+
+/* =========================================================
+   SMALL FOOTER
+========================================================= */
+
+.tv-footer {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 30px;
+    min-height: 48px;
+    padding: 9px 42px;
+    border-top: 1px solid var(--line);
+    background: var(--white);
+    color: var(--black);
+}
+
+.tv-footer-domain {
+    color: var(--blue);
+    font-size: clamp(16px, 1.2vw, 24px);
+    font-weight: 900;
+}
+
+.tv-footer-note {
+    color: var(--gray);
+    font-size: clamp(9px, 0.67vw, 13px);
+    font-weight: 700;
+    text-align: right;
+}
+
+.tv-progress {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: var(--red);
+}
+
+.tv-progress.is-running {
+    animation-name: tvProgress;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes tvProgress {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.tv-error {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    place-content: center;
+    padding: 40px;
+    background: var(--white);
+    text-align: center;
+}
+
+.tv-error h2 {
+    margin: 0 0 12px;
+    color: var(--red);
+    font-size: clamp(36px, 5vw, 80px);
+}
+
+.tv-error p {
+    margin: 0;
+    color: var(--blue);
+    font-size: clamp(18px, 2vw, 34px);
+    font-weight: 800;
+}
+
+/* =========================================================
+   SMALL SCREENS
+========================================================= */
+
+@media (max-width: 1100px) {
+    .tv-header {
+        grid-template-columns: 1fr auto auto;
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+
+    .tv-tagline {
+        display: none;
+    }
+
+    .tv-page {
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+
+    .tv-footer {
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+}
+
+@media (orientation: portrait) {
+    body {
+        overflow: auto;
+    }
+
+    .tv-board {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .tv-header {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .tv-brand,
+    .tv-page-status {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tv-page-inner,
+    .tv-page-inner.columns-2,
+    .tv-page-inner.columns-3,
+    .tv-page-inner.columns-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .tv-section + .tv-section {
+        padding-top: 25px;
+        padding-left: 0;
+        border-top: 1px solid var(--line);
+        border-left: 0;
+    }
+
+    .tv-footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .tv-footer-note {
+        text-align: center;
+    }
+}
+
+/* =========================================================
+   FINAL TV MENU BALANCING SYSTEM
+========================================================= */
+
+/* Main controlled column layout */
+
+.tv-page-inner {
+    display: grid;
+    grid-template-columns:
+        repeat(
+            var(--tv-column-count, 2),
+            minmax(0, 1fr)
+        );
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    gap: 0;
+    align-items: stretch;
+}
+
+.tv-column {
+    display: flex;
+    min-width: 0;
+    min-height: 0;
+    flex-direction: column;
+    gap: 0;
+    padding: 0 24px;
+    border-left: 1px solid var(--line);
+}
+
+.tv-column:first-child {
+    padding-left: 0;
+    border-left: 0;
+}
+
+.tv-column:last-child {
+    padding-right: 0;
+}
+
+/*
+   Sections with more content receive more vertical room.
+   Smaller sections can stack cleanly in the same column.
+*/
+
+.tv-section-slot {
+    display: flex;
+    min-width: 0;
+    min-height: 0;
+    flex:
+        var(--section-weight, 1)
+        1
+        0;
+}
+
+.tv-section-slot + .tv-section-slot {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+}
+
+.tv-section-slot > .tv-section {
+    width: 100%;
+    height: 100%;
+}
+
+/*
+   Remove the old left-border behavior because the
+   new .tv-column element now handles column separation.
+*/
+
+.tv-section + .tv-section {
+    padding-left: 0;
+    border-left: 0;
+}
+
+/* =========================================================
+   STRICT COLOR HIERARCHY
+========================================================= */
+
+/*
+   Every category and subsection heading is blue.
+*/
+
+.tv-combo-heading h3 {
+    color: var(--blue) !important;
+}
+
+.tv-combo-heading strong {
+    color: var(--red) !important;
+}
+/*
+   Every displayed price is red.
+*/
+
+.tv-item-price,
+.tv-combo-heading strong,
+.tv-item.has-long-price .tv-item-price {
+    color: var(--red) !important;
+}
+
+/*
+   All ordinary menu-item names remain black.
+*/
+
+.tv-item-name,
+.tv-list li,
+.tv-tag {
+    color: var(--black) !important;
+}
+
+/*
+   Descriptions and small notes remain neutral gray.
+*/
+
+.tv-note,
+.tv-section-description {
+    color: var(--gray) !important;
+}
+
+/*
+   Yellow is only used as a divider/accent.
+*/
+
+.tv-section-header,
+.tv-family-specials,
+.tv-combo-heading {
+    border-color: var(--yellow);
+}
+
+/* =========================================================
+   CLEAN SECTION HEADINGS
+========================================================= */
+
+.tv-section-header {
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 4px solid var(--yellow);
+}
+
+.tv-section-title {
+    font-weight: 900;
+    letter-spacing: -0.025em;
+}
+
+.tv-group-title {
+    margin-bottom: 8px;
+    font-weight: 900;
+}
+
+.tv-subheading {
+    font-weight: 900;
+}
+
+/* =========================================================
+   ROOMY PAGES
+========================================================= */
+
+/*
+   Sparse pages use larger text and spacing so the menu
+   actually occupies the screen instead of sitting at the top.
+*/
+
+.tv-page.is-roomy .tv-section-title {
+    font-size: clamp(27px, 2vw, 42px);
+}
+
+.tv-page.is-roomy .tv-group-title,
+.tv-page.is-roomy .tv-combo-heading h3,
+.tv-page.is-roomy .tv-combo-heading strong {
+    font-size: clamp(19px, 1.35vw, 28px);
+}
+
+.tv-page.is-roomy .tv-subheading {
+    font-size: clamp(16px, 1.1vw, 23px);
+}
+
+.tv-page.is-roomy .tv-item {
+    min-height: clamp(29px, 2.25vh, 40px);
+    padding: clamp(5px, 0.48vh, 9px) 0;
+    font-size: clamp(15px, 1.05vw, 22px);
+}
+
+.tv-page.is-roomy .tv-list {
+    row-gap: clamp(8px, 0.8vh, 14px);
+}
+
+.tv-page.is-roomy .tv-list li,
+.tv-page.is-roomy .tv-tag {
+    font-size: clamp(14px, 0.95vw, 20px);
+}
+
+.tv-page.is-roomy .tv-note,
+.tv-page.is-roomy .tv-section-description {
+    font-size: clamp(12px, 0.82vw, 17px);
+}
+
+/* =========================================================
+   COMPACT PAGES
+========================================================= */
+
+.tv-page.is-compact .tv-column {
+    padding-right: 18px;
+    padding-left: 18px;
+}
+
+.tv-page.is-compact .tv-section-title {
+    font-size: clamp(21px, 1.5vw, 31px);
+}
+
+.tv-page.is-compact .tv-group-title,
+.tv-page.is-compact .tv-combo-heading h3,
+.tv-page.is-compact .tv-combo-heading strong {
+    font-size: clamp(15px, 1.05vw, 22px);
+}
+
+.tv-page.is-compact .tv-subheading {
+    font-size: clamp(13px, 0.88vw, 18px);
+}
+
+.tv-page.is-compact .tv-item {
+    min-height: 23px;
+    padding: 3px 0;
+    font-size: clamp(11px, 0.77vw, 16px);
+}
+
+.tv-page.is-compact .tv-list li,
+.tv-page.is-compact .tv-tag {
+    font-size: clamp(10px, 0.68vw, 14px);
+}
+
+.tv-page.is-compact .tv-note,
+.tv-page.is-compact .tv-section-description {
+    font-size: clamp(9px, 0.62vw, 13px);
+}
+
+/* =========================================================
+   ULTRA-COMPACT PAGES
+========================================================= */
+
+.tv-page.is-ultra-compact .tv-column {
+    padding-right: 13px;
+    padding-left: 13px;
+}
+
+.tv-page.is-ultra-compact .tv-section-slot + .tv-section-slot {
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.tv-page.is-ultra-compact .tv-section-header {
+    margin-bottom: 7px;
+    padding-bottom: 5px;
+    border-bottom-width: 3px;
+}
+
+.tv-page.is-ultra-compact .tv-section-title {
+    font-size: clamp(17px, 1.15vw, 24px);
+}
+
+.tv-page.is-ultra-compact .tv-group-title,
+.tv-page.is-ultra-compact .tv-combo-heading h3,
+.tv-page.is-ultra-compact .tv-combo-heading strong {
+    font-size: clamp(12px, 0.78vw, 16px);
+}
+
+.tv-page.is-ultra-compact .tv-subheading {
+    margin: 7px 0 4px;
+    font-size: clamp(10px, 0.66vw, 14px);
+}
+
+.tv-page.is-ultra-compact .tv-item {
+    min-height: 17px;
+    padding: 1px 0;
+    font-size: clamp(8px, 0.54vw, 11px);
+}
+
+.tv-page.is-ultra-compact .tv-list {
+    gap: 2px 9px;
+}
+
+.tv-page.is-ultra-compact .tv-list li,
+.tv-page.is-ultra-compact .tv-tag {
+    font-size: clamp(7px, 0.48vw, 10px);
+}
+
+.tv-page.is-ultra-compact .tv-note,
+.tv-page.is-ultra-compact .tv-section-description {
+    font-size: clamp(7px, 0.45vw, 9px);
+}
+
+/* =========================================================
+   FLAT GROUP LAYOUT
+========================================================= */
+
+/*
+   Groups inside large categories spread across the width
+   instead of growing into one extremely tall vertical list.
+*/
+
+.tv-groups {
+    display: grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(min(100%, 205px), 1fr)
+        );
+    align-content: start;
+    gap: 20px 24px;
+}
+
+/*
+   Large pages can use wider internal group columns.
+*/
+
+.tv-page.is-roomy .tv-groups {
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(min(100%, 230px), 1fr)
+        );
+}
+
+/*
+   Compact pages use smaller internal group widths so
+   sections remain flat instead of excessively tall.
+*/
+
+.tv-page.is-compact .tv-groups,
+.tv-page.is-ultra-compact .tv-groups {
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(min(100%, 145px), 1fr)
+        );
+    gap: 12px 16px;
+}
+
+/* =========================================================
+   CLEAN COMBO LAYOUT
+========================================================= */
+
+.tv-combo-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(min(100%, 230px), 1fr)
+        );
+    gap: 22px;
+}
+
+.tv-family-specials {
+    margin-top: 18px;
+    padding-top: 13px;
+    border-top: 4px solid var(--yellow);
+}
+
+/* =========================================================
+   LONG PRICE FORMATTING
+========================================================= */
+
+/*
+   Individual / Box / Family pricing stays red like every
+   other price, but appears beneath the item when necessary.
+*/
+
+.tv-item.has-long-price {
+    grid-template-columns: 1fr;
+    gap: 2px;
+}
+
+.tv-item.has-long-price .tv-item-price {
+    font-size: 0.9em;
+    font-weight: 900;
+    text-align: left;
+    white-space: normal;
+}
+
+/* =========================================================
+   MOBILE / PORTRAIT FALLBACK
+========================================================= */
+
+@media (orientation: portrait) {
+    .tv-page-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .tv-column {
+        padding: 20px 0;
+        border-top: 1px solid var(--line);
+        border-left: 0;
+    }
+
+    .tv-column:first-child {
+        border-top: 0;
+    }
+}
+
+/* =========================================================
+   PAGE 1 — CUSTOMER ORDER FLOW
+========================================================= */
+
+.tv-order-flow {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    flex-direction: column;
+}
+
+.tv-flow-row {
+    min-width: 0;
+    min-height: 0;
+    flex: var(--row-size, 1) 1 0;
+}
+
+/*
+   Divider between:
+   1. Choose chicken
+   2. Choose flavor
+*/
+
+.tv-flow-row + .tv-flow-row {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 2px solid var(--line);
+}
+
+.tv-flow-row > .tv-section {
+    width: 100%;
+    height: 100%;
+}
+
+/*
+   Page 1 does not use the vertical section divider.
+*/
+
+.tv-page.is-order-flow .tv-section {
+    padding: 0;
+    border: 0;
+}
+
+/* =========================================================
+   CHICKEN — FLAT HORIZONTAL LAYOUT
+========================================================= */
+
+/*
+   Put all major chicken choices across one continuous row.
+   This avoids stacking Mixed Chicken and Tenders far below.
+*/
+
+.tv-page.is-order-flow
+.tv-flow-row:first-child
+.tv-groups {
+    display: grid;
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+    height: calc(100% - 72px);
+    align-items: start;
+    gap: 0;
+}
+
+.tv-page.is-order-flow
+.tv-flow-row:first-child
+.tv-group {
+    min-width: 0;
+    height: 100%;
+    padding: 0 18px;
+    border-left: 1px solid var(--line);
+}
+
+.tv-page.is-order-flow
+.tv-flow-row:first-child
+.tv-group:first-child {
+    padding-left: 0;
+    border-left: 0;
+}
+
+.tv-page.is-order-flow
+.tv-flow-row:first-child
+.tv-group:last-child {
+    padding-right: 0;
+}
+
+/*
+   If Chicken contains six groups, the last two can share
+   the fifth area instead of wrapping underneath awkwardly.
+*/
+
+.tv-page.is-order-flow
+.tv-flow-row:first-child
+.tv-group:nth-child(n + 6) {
+    margin-top: 14px;
+}
+
+/* =========================================================
+   FLAVORS — SINGLE ORDERING STRIP
+========================================================= */
+
+.tv-page.is-order-flow
+.tv-flow-row:last-child
+.tv-section-header {
+    margin-bottom: 12px;
+}
+
+.tv-page.is-order-flow
+.tv-flow-row:last-child
+.tv-groups {
+    display: grid;
+    grid-template-columns:
+        1.25fr
+        0.9fr
+        1.15fr
+        0.8fr;
+    height: calc(100% - 66px);
+    align-items: start;
+    gap: 0;
+}
+
+.tv-page.is-order-flow
+.tv-flow-row:last-child
+.tv-group {
+    min-width: 0;
+    padding: 0 18px;
+    border-left: 1px solid var(--line);
+}
+
+.tv-page.is-order-flow
+.tv-flow-row:last-child
+.tv-group:first-child {
+    padding-left: 0;
+    border-left: 0;
+}
+
+.tv-page.is-order-flow
+.tv-flow-row:last-child
+.tv-group:last-child {
+    padding-right: 0;
+}
+
+/*
+   Keep flavor choices readable but compact.
+*/
+
+.tv-page.is-order-flow
+.tv-flow-row:last-child
+.tv-group-title {
+    margin-bottom: 7px;
+    font-size: clamp(16px, 1.15vw, 23px);
+}
+
+.tv-page.is-order-flow
+.tv-flow-row:last-child
+.tv-tag {
+    font-size: clamp(12px, 0.82vw, 17px);
+}
+
+.tv-page.is-order-flow
+.tv-flow-row:last-child
+.tv-item {
+    min-height: 24px;
+    padding: 3px 0;
+    font-size: clamp(12px, 0.83vw, 17px);
+}
+
+/* =========================================================
+   ORDER FLOW HEADINGS
+========================================================= */
+
+/*
+   Adds a visual instruction without adding another box.
+*/
+
+.tv-page.is-order-flow
+.tv-flow-row:first-child
+.tv-section-title::before {
+    margin-right: 10px;
+    color: var(--red);
+    content: "1.";
+}
+
+.tv-page.is-order-flow
+.tv-flow-row:last-child
+.tv-section-title::before {
+    margin-right: 10px;
+    color: var(--red);
+    content: "2.";
+}
+
+/* =========================================================
+   LOWER-RESOLUTION TV FALLBACK
+========================================================= */
+
+@media (max-width: 1350px) {
+    .tv-page.is-order-flow
+    .tv-flow-row:first-child
+    .tv-groups {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+    .tv-page.is-order-flow
+    .tv-flow-row:last-child
+    .tv-groups {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+    }
+
+    .tv-page.is-order-flow
+    .tv-flow-row:first-child
+    .tv-group {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
+
+/* =========================================================
+   FINAL TV MENU LAYOUT OVERRIDES
+========================================================= */
+
+.tv-page-inner {
+    display: grid;
+    grid-template-columns: var(
+        --tv-column-template,
+        repeat(4, minmax(0, 1fr))
+    );
+    align-items: stretch;
+    width: 100%;
+}
+
+/* Section titles and underline use blue */
+.tv-section-title {
+    color: var(--blue);
+}
+
+/* Only the line below the main TV header is blue */
+.tv-header {
+    border-bottom-color: var(--blue) !important;
+}
+
+/* Menu section underlines stay restaurant yellow */
+.tv-section-header {
+    border-bottom-color: var(--yellow) !important;
+}
+
+.tv-section-title {
+    color: var(--blue);
+}
+
+/* Main header line underneath "Menu" */
+.tv-header {
+    border-bottom-color: var(--blue);
+}
+
+/* Horizontal first page */
+.tv-page.is-horizontal-flow .tv-order-flow {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.tv-page.is-horizontal-flow .tv-flow-row {
+    display: block;
+    width: 100%;
+    min-height: 0;
+}
+
+.tv-page.is-horizontal-flow .tv-flow-row:first-child {
+    flex: 1 1 auto;
+}
+
+.tv-page.is-horizontal-flow .tv-flow-row.is-full-width {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+/* Chicken cards sit horizontally */
+.tv-page.is-horizontal-flow
+.tv-section-chicken
+.tv-groups {
+    display: grid;
+    grid-template-columns: repeat(
+        5,
+        minmax(0, 1fr)
+    );
+    gap: 16px;
+}
+
+/* Flavors stretch across the complete screen */
+.tv-page.is-horizontal-flow
+.tv-section-flavors
+.tv-groups {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.4fr)
+        minmax(0, 1.2fr)
+        minmax(0, 0.8fr);
+    gap: 22px;
+    width: 100%;
+}
+
+.tv-page.is-horizontal-flow
+.tv-section-flavors {
+    width: 100%;
+}
+
+/* Combo Dinner Mix */
+.tv-combo-price-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.tv-combo-price {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 7px 8px;
+    border-bottom: 1px solid #d9dee7;
+}
+
+.tv-combo-price strong {
+    color: var(--blue);
+}
+
+.tv-combo-price span {
+    color: var(--red);
+    font-weight: 900;
+}
+
+.tv-combo-options .tv-list {
+    columns: 2;
+    column-gap: 18px;
+}
+
+/* TV section photos */
+.tv-section-images {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.tv-section-image {
+    flex: 1 1 0;
+    min-width: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.tv-section-image img {
+    display: block;
+    width: 100%;
+    height: clamp(120px, 14vh, 175px);
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.tv-section-image figcaption {
+    margin-top: 3px;
+    color: var(--blue);
+    font-size: 0.65rem;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+/* Highlight options inside descriptions */
+.tv-section-description .menu-highlight-option {
+    display: inline;
+    color: var(--red);
+    font-weight: 900;
+}
+
+.tv-section-description .menu-dinner-fries-note {
+    display: inline;
+    color: var(--blue);
+    font-weight: 900;
+    margin-left: 8px;
+}
+
+/* =========================================================
+   TV SEAFOOD LAYOUT
+========================================================= */
+
+.tv-section-seafood .tv-groups {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 14px;
+}
+
+.tv-section-seafood .tv-group {
+    min-width: 0;
+}
+
+/* Catfish Nuggets and Regular Shrimp use the bottom row */
+.tv-section-seafood .tv-group:nth-child(4),
+.tv-section-seafood .tv-group:nth-child(5) {
+    align-self: start;
+}
+
+.tv-section-seafood .tv-group:nth-child(4) {
+    grid-column: 1 / 2;
+}
+
+.tv-section-seafood .tv-group:nth-child(5) {
+    grid-column: 2 / 3;
+}
+
+.tv-section-combos .tv-combo-price-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 7px;
+}
+
+.tv-section-combos .tv-combo-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.tv-section-combos .tv-combo-options .tv-list {
+    columns: 2;
+    column-gap: 18px;
+}
+
+/* Sections with fewer items can use larger images */
+.tv-section-rice-bowls .tv-section-image img,
+.tv-section-philly .tv-section-image img,
+.tv-section-sandwiches .tv-section-image img,
+.tv-section-nachos .tv-section-image img,
+.tv-section-hot-dogs .tv-section-image img {
+    height: clamp(135px, 16vh, 195px);
+}
+
+.tv-section-seafood .tv-section-image img {
+    height: clamp(105px, 12vh, 150px);
+}
+
+.tv-section-images {
+    margin-top: 12px;
+}
+
+.tv-column {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.tv-section-slot {
+    flex-grow: var(--section-weight, 1);
+    min-height: 0;
+}
+
+.tv-section {
+    height: auto;
+    min-height: 0;
+}
+
+/* =========================================================
+   PAGE 3 — NATURAL SECTION HEIGHTS
+========================================================= */
+
+.tv-page-inner .tv-column {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 100%;
+}
+
+.tv-page-inner .tv-section {
+    height: auto;
+    min-height: 0;
+}
+
+/* Small separation between stacked sections */
+.tv-column .tv-section-slot + .tv-section-slot {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid #d9dee7;
+}
+
+/* =========================================================
+   LARGER PAGE 3 PHOTOS
+========================================================= */
+
+.tv-section-sandwiches .tv-section-image img {
+    height: clamp(155px, 18vh, 215px);
+}
+
+.tv-section-nachos .tv-section-image img {
+    height: clamp(170px, 20vh, 235px);
+}
+
+.tv-section-hot-dogs .tv-section-image img {
+    height: clamp(145px, 17vh, 205px);
+}
+
+.tv-section-rice-bowls .tv-section-image img {
+    height: clamp(145px, 17vh, 200px);
+}
+
+/* Rice Bowls on Page 3 */
+.tv-section-rice-bowls .tv-section-image img {
+    height: clamp(120px, 14vh, 170px);
+}
+
+.tv-section-rice-bowls .tv-section-images {
+    margin-top: 10px;
+}
+
+/* =========================================================
+   PAGE 1 — CHICKEN CONTENT FILLS AVAILABLE HEIGHT
+========================================================= */
+
+.tv-page.is-horizontal-flow .tv-order-flow {
+    display: grid;
+
+    grid-template-rows:
+        minmax(0, 1fr)
+        auto;
+
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+}
+
+.tv-page.is-horizontal-flow
+.tv-flow-row:first-child {
+    min-height: 0;
+}
+
+.tv-page.is-horizontal-flow
+.tv-section-chicken {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+}
+
+.tv-page.is-horizontal-flow
+.tv-section-chicken .tv-groups {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: stretch;
+
+    flex: 1 1 auto;
+
+    width: 100%;
+    min-height: 0;
+    gap: 14px;
+}
+
+.tv-page.is-horizontal-flow
+.tv-section-chicken .tv-group {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    min-height: 0;
+}
+
+/* Stretch the actual list area */
+.tv-page.is-horizontal-flow
+.tv-section-chicken .tv-items {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+/* Spread rows down the available Chicken area */
+.tv-page.is-horizontal-flow
+.tv-section-chicken .tv-item {
+    flex: 1 1 auto;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+
+    min-height: 30px;
+}
+
+/* Keep pictures normal-sized */
+.tv-page.is-horizontal-flow
+.tv-section-chicken .tv-section-images {
+    flex: 0 0 auto;
+    margin-top: 12px;
+}
+
+.tv-page.is-horizontal-flow
+.tv-section-chicken .tv-section-image img {
+    height: 125px !important;
+}
+
+.tv-page.is-horizontal-flow
+.tv-section-chicken .tv-group .tv-note {
+    flex: 0 0 auto;
+}
+
+.tv-page.is-horizontal-flow
+.tv-section-chicken .tv-group-title {
+    flex: 0 0 auto;
+}
+
+
+/* =========================================================
+   PAGE 1 — CHICKEN MENU FILLS THE OPEN SPACE
+========================================================= */
+
+.tv-page.is-horizontal-flow .tv-order-flow {
+    display: grid !important;
+    grid-template-rows:
+        minmax(0, 1fr)
+        auto !important;
+
+    height: 100% !important;
+}
+
+/* The first row owns all space above the sauce section */
+.tv-page.is-horizontal-flow
+.tv-flow-row:first-child {
+    display: block !important;
+    height: 100% !important;
+    min-height: 0 !important;
+}
+
+/* Chicken section fills the complete first row */
+.tv-page.is-horizontal-flow
+.tv-section-chicken {
+    display: grid !important;
+    grid-template-rows:
+        auto
+        minmax(0, 1fr)
+        auto !important;
+
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+}
+
+/* Header stays at the top */
+.tv-page.is-horizontal-flow
+.tv-section-chicken .tv-section-header {
+    grid-row: 1;
+}
+
+/* Chicken columns fill the available middle area */
+.tv-page.is-horizontal-flow
+.tv-section-chicken .tv-groups {
+    grid-row: 2;
+
+    display: grid !important;
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr)) !important;
+
+    align-items: stretch !important;
+
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+
+    gap: 14px !important;
+}
+
+/* Each chicken category becomes a full-height column */
+.tv-page.is-horizontal-flow
+.tv-section-chicken .tv-group {
+    display: grid !important;
+    grid-template-rows:
+        auto
+        auto
+        minmax(0, 1fr) !important;
+
+    height: 100% !important;
+    min-height: 0 !important;
+}
+
+/* Menu rows spread evenly down the column */
+.tv-page.is-horizontal-flow
+.tv-section-chicken .tv-items {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+
+    height: 100% !important;
+    min-height: 0 !important;
+}
+
+/* Each item grows slightly to occupy the open space */
+.tv-page.is-horizontal-flow
+.tv-section-chicken .tv-item {
+    flex: 1 1 0 !important;
+
+    display: grid !important;
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto !important;
+
+    align-items: center !important;
+
+    min-height: 34px !important;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+}
+
+/* Pictures stay their current size at the bottom */
+.tv-page.is-horizontal-flow
+.tv-section-chicken .tv-section-images {
+    grid-row: 3;
+
+    margin-top: 12px !important;
+    flex: none !important;
+}
+
+.tv-page.is-horizontal-flow
+.tv-section-chicken .tv-section-image img {
+    height: 125px !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE TV CANVAS
+   Always fit the complete 1920 × 1080 menu on screen
+========================================================= */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: #000;
+}
+
+.tv-screen {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+    background: #000;
+}
+
+.tv-board {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 1920px !important;
+    height: 1080px !important;
+    min-width: 1920px;
+    min-height: 1080px;
+
+    transform:
+        translate(-50%, -50%)
+        scale(var(--tv-scale, 1));
+
+    transform-origin: center center;
+
+    overflow: hidden;
+    background: #fff;
+}
+
+@media (max-aspect-ratio: 4 / 3) {
+    .tv-screen {
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* =========================================================
+   FINAL TV MENU ENLARGEMENT
+   Larger text, rows, and photos while preserving 1920x1080
+========================================================= */
+
+/* Main section headings */
+.tv-section-title {
+    font-size: clamp(1.85rem, 2.15vw, 2.55rem) !important;
+    line-height: 1 !important;
+}
+
+/* Category names such as Catfish Fillet and Party Wingz */
+.tv-group-title {
+    font-size: clamp(1.15rem, 1.35vw, 1.55rem) !important;
+    line-height: 1.05 !important;
+}
+
+/* DINNERS / BY THE PIECE */
+.tv-subheading {
+    font-size: clamp(0.95rem, 1.05vw, 1.18rem) !important;
+    line-height: 1.05 !important;
+}
+
+/* Descriptions and notes */
+.tv-section-description,
+.tv-note,
+.tv-group-note {
+    font-size: clamp(0.72rem, 0.82vw, 0.92rem) !important;
+    line-height: 1.22 !important;
+}
+
+/* General menu rows */
+.tv-item {
+    min-height: 30px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+.tv-item-name,
+.tv-item-price {
+    font-size: clamp(0.84rem, 0.96vw, 1.08rem) !important;
+    line-height: 1.12 !important;
+}
+
+.tv-item-price {
+    font-weight: 900 !important;
+}
+
+/* Lists and topping tags */
+.tv-list,
+.tv-tags,
+.tv-tag-list {
+    font-size: clamp(0.75rem, 0.86vw, 0.96rem) !important;
+    line-height: 1.25 !important;
+}
+
+/* Keep section spacing controlled */
+.tv-section-header {
+    margin-bottom: 10px !important;
+}
+
+.tv-group {
+    min-width: 0;
+}
+
+/* =========================================================
+   PAGE 1 — LARGER CHICKEN MENU ROWS
+========================================================= */
+
+.tv-page.is-horizontal-flow
+.tv-section-chicken .tv-items {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100% !important;
+}
+
+.tv-page.is-horizontal-flow
+.tv-section-chicken .tv-item {
+    flex: 1 1 0 !important;
+    min-height: 39px !important;
+
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
+}
+
+.tv-page.is-horizontal-flow
+.tv-section-chicken .tv-item-name,
+.tv-page.is-horizontal-flow
+.tv-section-chicken .tv-item-price {
+    font-size: 1.02rem !important;
+}
+
+/* Keep Chicken pictures controlled */
+.tv-page.is-horizontal-flow
+.tv-section-chicken .tv-section-image img {
+    height: 145px !important;
+}
+
+/* =========================================================
+   PAGE 2 — PHILLY TOP / SEAFOOD LARGE / COMBO SMALL
+========================================================= */
+
+.tv-page.is-page-two-boxes {
+    min-height: 0;
+}
+
+.tv-page.is-page-two-boxes .tv-order-flow {
+    display: grid !important;
+
+    grid-template-columns:
+        minmax(0, 3.25fr)
+        minmax(290px, 1fr) !important;
+
+    grid-template-rows:
+        minmax(0, 1fr)
+        minmax(0, 1.08fr) !important;
+
+    grid-template-areas:
+        "philly philly"
+        "seafood combos";
+
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+
+    column-gap: 20px;
+    row-gap: 12px;
+}
+
+/* Top row */
+.tv-page.is-page-two-boxes .tv-area-philly {
+    grid-area: philly;
+
+    display: grid !important;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr)) !important;
+
+    align-items: stretch;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+
+    gap: 28px;
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #d9dee7;
+}
+
+/* Bottom-left */
+.tv-page.is-page-two-boxes .tv-area-seafood {
+    grid-area: seafood;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+
+    padding-right: 18px;
+    border-right: 1px solid #d9dee7;
+}
+
+/* Bottom-right */
+.tv-page.is-page-two-boxes .tv-area-combos {
+    grid-area: combos;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+
+    align-self: stretch;
+
+    padding: 14px 16px;
+
+    border: 1px solid #d9dee7;
+    border-radius: 12px;
+    background: #f8fafc;
+}
+
+/* =========================================================
+   PAGE 2 — MATCHING PHILLY SECTIONS
+========================================================= */
+
+.tv-page.is-page-two-boxes
+.tv-area-philly > .tv-section-slot {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+.tv-page.is-page-two-boxes
+.tv-section-philly,
+.tv-page.is-page-two-boxes
+.tv-section-philly-wraps {
+    display: grid !important;
+
+    grid-template-rows:
+        auto
+        minmax(0, 1fr)
+        auto !important;
+
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+
+    overflow: hidden;
+}
+
+.tv-page.is-page-two-boxes
+.tv-section-philly .tv-section-header,
+.tv-page.is-page-two-boxes
+.tv-section-philly-wraps .tv-section-header {
+    margin: 0 0 6px !important;
+    padding-bottom: 6px !important;
+}
+
+.tv-page.is-page-two-boxes
+.tv-section-philly .tv-section-title,
+.tv-page.is-page-two-boxes
+.tv-section-philly-wraps .tv-section-title {
+    margin: 0 !important;
+}
+
+.tv-page.is-page-two-boxes
+.tv-section-philly .tv-section-description,
+.tv-page.is-page-two-boxes
+.tv-section-philly-wraps .tv-section-description {
+    margin: 3px 0 0 !important;
+}
+
+.tv-page.is-page-two-boxes
+.tv-section-philly .tv-item,
+.tv-page.is-page-two-boxes
+.tv-section-philly-wraps .tv-item {
+    display: grid !important;
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto !important;
+
+    align-items: center;
+
+    min-height: 25px !important;
+
+    gap: 14px !important;
+    padding: 3px 0 !important;
+}
+
+.tv-page.is-page-two-boxes
+.tv-section-philly .tv-item-price,
+.tv-page.is-page-two-boxes
+.tv-section-philly-wraps .tv-item-price {
+    min-width: max-content !important;
+    white-space: nowrap !important;
+    text-align: right !important;
+}
+
+.tv-page.is-page-two-boxes
+.tv-section-philly .tv-subheading,
+.tv-page.is-page-two-boxes
+.tv-section-philly-wraps .tv-subheading {
+    margin-top: 7px !important;
+    margin-bottom: 4px !important;
+}
+
+.tv-page.is-page-two-boxes
+.tv-section-philly .tv-section-images,
+.tv-page.is-page-two-boxes
+.tv-section-philly-wraps .tv-section-images {
+    display: flex !important;
+
+    align-items: flex-end;
+    justify-content: space-evenly;
+
+    width: 100%;
+
+    gap: 22px !important;
+    margin-top: 8px !important;
+}
+
+.tv-page.is-page-two-boxes
+.tv-section-philly .tv-section-image,
+.tv-page.is-page-two-boxes
+.tv-section-philly-wraps .tv-section-image {
+    flex: 1 1 0;
+
+    width: 100%;
+    min-width: 0;
+    max-width: 31%;
+}
+
+.tv-page.is-page-two-boxes
+.tv-section-philly-wraps .tv-section-image {
+    max-width: 40%;
+}
+
+.tv-page.is-page-two-boxes
+.tv-section-philly .tv-section-image img,
+.tv-page.is-page-two-boxes
+.tv-section-philly-wraps .tv-section-image img {
+    display: block !important;
+
+    width: 100% !important;
+    height: 105px !important;
+
+    margin: 0 auto !important;
+    object-fit: contain !important;
+}
+
+/* =========================================================
+   PAGE 2 — LARGE SEAFOOD SECTION
+========================================================= */
+
+.tv-page.is-page-two-boxes
+.tv-section-seafood {
+    display: grid !important;
+
+    grid-template-rows:
+        auto
+        minmax(0, 1fr)
+        auto !important;
+
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+}
+
+.tv-page.is-page-two-boxes
+.tv-section-seafood .tv-section-header {
+    margin-bottom: 8px !important;
+}
+
+.tv-page.is-page-two-boxes
+.tv-section-seafood .tv-groups {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr)) !important;
+
+    align-items: start;
+
+    width: 100%;
+    min-width: 0;
+
+    gap: 18px !important;
+}
+
+.tv-page.is-page-two-boxes
+.tv-section-seafood .tv-group {
+    width: 100%;
+    min-width: 0;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.tv-page.is-page-two-boxes
+.tv-section-seafood .tv-section-images {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr)) !important;
+
+    align-items: end;
+    justify-items: center;
+
+    width: 100%;
+
+    gap: 24px !important;
+    margin-top: 14px !important;
+}
+
+.tv-page.is-page-two-boxes
+.tv-section-seafood .tv-section-image {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+.tv-page.is-page-two-boxes
+.tv-section-seafood .tv-section-image img {
+    display: block !important;
+
+    width: 100% !important;
+    height: 135px !important;
+
+    margin: 0 auto !important;
+    object-fit: contain !important;
+}
+
+/* =========================================================
+   PAGE 2 — SMALL COMBO DINNER BOX
+========================================================= */
+
+.tv-page.is-page-two-boxes
+.tv-section-combos {
+    width: 100%;
+    height: 100%;
+}
+
+.tv-page.is-page-two-boxes
+.tv-section-combos .tv-section-header {
+    margin-bottom: 8px !important;
+}
+
+.tv-page.is-page-two-boxes
+.tv-section-combos .tv-section-title {
+    font-size: 1.55rem !important;
+    line-height: 1 !important;
+}
+
+.tv-page.is-page-two-boxes
+.tv-section-combos .tv-section-description {
+    font-size: 0.76rem !important;
+}
+
+.tv-page.is-page-two-boxes
+.tv-section-combos .tv-combo-price-row {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+
+    gap: 7px !important;
+    margin-bottom: 9px !important;
+}
+
+.tv-page.is-page-two-boxes
+.tv-section-combos .tv-combo-price {
+    min-height: 34px !important;
+
+    padding: 5px 9px !important;
+}
+
+.tv-page.is-page-two-boxes
+.tv-section-combos .tv-combo-options .tv-list {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr)) !important;
+
+    width: 100%;
+
+    columns: initial !important;
+
+    gap: 7px 12px !important;
+    margin: 0 !important;
+}
+
+.tv-page.is-page-two-boxes
+.tv-section-combos .tv-list {
+    font-size: 0.78rem !important;
+    line-height: 1.2 !important;
+}
+
+/* =========================================================
+   PAGE 2 BOXES — REMOVE OLD ROW BEHAVIOR
+========================================================= */
+
+.tv-page.is-page-two-boxes
+.tv-flow-row {
+    margin: 0 !important;
+    padding: 0 !important;
+    border-top: 0 !important;
+}
+
+/* Restore only the spacing controlled by the new grid */
+.tv-page.is-page-two-boxes
+.tv-order-flow {
+    column-gap: 20px !important;
+    row-gap: 12px !important;
+}
+
+.tv-flow-row + .tv-flow-row {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 2px solid var(--line);
+}
+
+/* Reset old Seafood group positions */
+.tv-page.is-page-two-boxes
+.tv-section-seafood .tv-group {
+    grid-column: auto !important;
+    grid-row: auto !important;
+}
+
+.tv-section-seafood .tv-group:nth-child(4) {
+    grid-column: 1 / 2;
+}
+
+.tv-section-seafood .tv-group:nth-child(5) {
+    grid-column: 2 / 3;
+}
+
+/* =========================================================
+   PAGE 1 — LARGER SEASONING & SAUCE FLAVORS ONLY
+========================================================= */
+
+/* Give the first two flavor columns more room */
+.tv-page.is-horizontal-flow
+.tv-section-flavors
+.tv-groups {
+    grid-template-columns:
+        minmax(0, 1.35fr)
+        minmax(0, 1.2fr)
+        minmax(0, 0.75fr) !important;
+}
+
+/* Enlarge only Seasoning Flavors and Sauce Flavors headings */
+.tv-page.is-horizontal-flow
+.tv-section-flavors
+.tv-group:nth-child(-n + 2)
+.tv-group-title {
+    font-size: 1.45rem !important;
+    line-height: 1.05 !important;
+    margin-bottom: 10px !important;
+}
+
+/* Enlarge only the flavor names in those first two columns */
+.tv-page.is-horizontal-flow
+.tv-section-flavors
+.tv-group:nth-child(-n + 2)
+.tv-tag {
+    font-size: 1rem !important;
+    line-height: 1.35 !important;
+}
+
+/* Slightly more spacing between flavor names */
+.tv-page.is-horizontal-flow
+.tv-section-flavors
+.tv-group:nth-child(-n + 2)
+.tv-tags {
+    gap: 9px 12px !important;
+}
+
+/* =========================================================
+   PAGE 1 — FIX CHICKEN SUBSECTION SPACING
+========================================================= */
+
+/*
+   Stop subsection item lists from stretching to fill
+   the entire chicken column.
+*/
+.tv-page.is-horizontal-flow
+.tv-section-chicken
+.tv-group-section
+.tv-items {
+    display: block !important;
+    height: auto !important;
+    min-height: 0 !important;
+    flex: none !important;
+    justify-content: initial !important;
+}
+
+/* Subsection rows remain normal-sized */
+.tv-page.is-horizontal-flow
+.tv-section-chicken
+.tv-group-section
+.tv-item {
+    min-height: 39px !important;
+    height: auto !important;
+    flex: none !important;
+}
+
+/*
+   Space between the end of DINNERS and the start of
+   WINGZ ONLY / CHICKEN ONLY.
+*/
+.tv-page.is-horizontal-flow
+.tv-section-chicken
+.tv-group-section + .tv-group-section {
+    margin-top: 28px !important;
+    padding-top: 0 !important;
+    border-top: 0 !important;
+}
+
+/* Space above the first subsection heading */
+.tv-page.is-horizontal-flow
+.tv-section-chicken
+.tv-group-section:first-of-type {
+    margin-top: 20px !important;
+}
+
+/* Red subsection headings */
+.tv-page.is-horizontal-flow
+.tv-section-chicken
+.tv-subheading {
+    position: static !important;
+    margin: 0 0 10px !important;
+    padding: 0 !important;
+
+    color: var(--red) !important;
+
+    font-size: 1.08rem !important;
+    line-height: 1 !important;
+}
+
+/* Completely remove the accidental short underline */
+.tv-page.is-horizontal-flow
+.tv-section-chicken
+.tv-subheading::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* =========================================================
+   PAGE 1 — MOVE CHICKEN PHOTOS SLIGHTLY LEFT
+========================================================= */
+
+.tv-page.is-horizontal-flow
+.tv-section-chicken
+.tv-section-images {
+    transform: translateX(-32px) !important;
+}
+
+/* =========================================================
+   PAGE 1 — PARTY WINGZ TWO-LINE FORMAT
+========================================================= */
+
+.tv-page.is-horizontal-flow
+.tv-section-chicken
+.tv-group:first-child
+.tv-item {
+    grid-template-columns: 1fr !important;
+    align-content: center !important;
+    gap: 4px !important;
+}
+
+.tv-page.is-horizontal-flow
+.tv-section-chicken
+.tv-group:first-child
+.tv-item-name {
+    white-space: nowrap !important;
+}
+
+.tv-page.is-horizontal-flow
+.tv-section-chicken
+.tv-group:first-child
+.tv-item-price {
+    width: 100% !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+    font-size: 0.92rem !important;
+}
+
+/* =========================================================
+   ALSIP PAGE 2 — SEAFOOD TOP / COMBOS BOTTOM
+   70% / 30% VERTICAL SPLIT
+========================================================= */
+
+.tv-page:has(.tv-section-seafood):has(.tv-section-combos)
+.tv-page-inner {
+    display: grid !important;
+
+    grid-template-columns: 1fr !important;
+    grid-template-rows:
+        minmax(0, 7fr)
+        minmax(0, 3fr) !important;
+
+    grid-template-areas:
+        "seafood"
+        "combos";
+
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+
+    gap: 16px !important;
+}
+
+/* The columns become the two horizontal rows */
+.tv-page:has(.tv-section-seafood):has(.tv-section-combos)
+.tv-column:has(.tv-section-seafood) {
+    grid-area: seafood;
+
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+}
+
+.tv-page:has(.tv-section-seafood):has(.tv-section-combos)
+.tv-column:has(.tv-section-combos) {
+    grid-area: combos;
+
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 14px 0 0 !important;
+
+    border: 0 !important;
+    border-top: 2px solid var(--line) !important;
+}
+
+/* Remove old stacked-section spacing */
+.tv-page:has(.tv-section-seafood):has(.tv-section-combos)
+.tv-section-slot {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+}
+
+/* Seafood fills the upper section */
+.tv-page:has(.tv-section-seafood):has(.tv-section-combos)
+.tv-section-seafood {
+    display: grid !important;
+
+    grid-template-rows:
+        auto
+        minmax(0, 1fr)
+        auto !important;
+
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+}
+
+/* Spread all five seafood categories horizontally */
+.tv-page:has(.tv-section-seafood):has(.tv-section-combos)
+.tv-section-seafood
+.tv-groups {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr)) !important;
+
+    align-items: start !important;
+
+    width: 100% !important;
+    gap: 24px !important;
+}
+
+/* Reset the old special positions for nuggets and shrimp */
+.tv-page:has(.tv-section-seafood):has(.tv-section-combos)
+.tv-section-seafood
+.tv-group {
+    grid-column: auto !important;
+    grid-row: auto !important;
+}
+
+/* Keep the three seafood pictures centered below the menu */
+.tv-page:has(.tv-section-seafood):has(.tv-section-combos)
+.tv-section-seafood
+.tv-section-images {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr)) !important;
+
+    align-items: end !important;
+    justify-items: center !important;
+
+    width: 62% !important;
+
+    margin:
+        12px auto
+        0 !important;
+
+    gap: 36px !important;
+}
+
+/* Combo section fills the lower row */
+.tv-page:has(.tv-section-seafood):has(.tv-section-combos)
+.tv-section-combos {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Choose 2 and Choose 3 remain side by side */
+.tv-page:has(.tv-section-seafood):has(.tv-section-combos)
+.tv-section-combos
+.tv-combo-price-row {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 28px !important;
+}
+
+/* =========================================================
+   ALSIP PAGE 2
+   SEAFOOD TOP 70% / COMBOS & FAMILY SPECIALS BOTTOM 30%
+========================================================= */
+
+.tv-page.is-page-two-bands .tv-order-flow {
+    display: grid !important;
+
+    grid-template-columns: 1fr !important;
+    grid-template-rows:
+        minmax(0, 7fr)
+        minmax(0, 3fr) !important;
+
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+
+    gap: 16px !important;
+}
+
+/* Each row spans the full screen width */
+.tv-page.is-page-two-bands .tv-flow-row {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+}
+
+/* Seafood section */
+.tv-page.is-page-two-bands .tv-area-seafood {
+    grid-row: 1;
+}
+
+/* Combos and family specials */
+.tv-page.is-page-two-bands .tv-area-specials {
+    grid-row: 2;
+
+    padding-top: 12px !important;
+    border-top: 2px solid var(--line) !important;
+}
+
+/* Make both sections fill their assigned band */
+.tv-page.is-page-two-bands .tv-section {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+}
+
+/* Seafood categories across the full top section */
+.tv-page.is-page-two-bands
+.tv-area-seafood
+.tv-section-seafood
+.tv-groups {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr)) !important;
+
+    align-items: start !important;
+
+    width: 100% !important;
+    gap: 24px !important;
+}
+
+/* Remove any older manual seafood positioning */
+.tv-page.is-page-two-bands
+.tv-area-seafood
+.tv-section-seafood
+.tv-group {
+    grid-column: auto !important;
+    grid-row: auto !important;
+}
+
+/* Center the three seafood photos */
+.tv-page.is-page-two-bands
+.tv-area-seafood
+.tv-section-images {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr)) !important;
+
+    justify-items: center !important;
+    align-items: end !important;
+
+    width: 65% !important;
+    margin: 18px auto 0 !important;
+    gap: 32px !important;
+}
+
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-combo-price-row {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 32px !important;
+}
+
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-combo-options .tv-list {
+    columns: 2 !important;
+    column-gap: 42px !important;
+}
+
+/* =========================================================
+   PAGE 2 — BOTTOM 30% SPLIT 50/50
+   LEFT: COMBO DINNER MIX
+   RIGHT: FAMILY SPECIALS
+========================================================= */
+
+/* Turn the full combo section into a two-column layout */
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-section-specials {
+    display: grid !important;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr) !important;
+
+    grid-template-rows:
+        auto
+        minmax(0, 1fr) !important;
+
+    column-gap: 34px !important;
+    row-gap: 8px !important;
+
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+}
+
+/* Main title spans the entire bottom band */
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-section-header {
+    grid-column: 1 / -1 !important;
+    grid-row: 1 !important;
+
+    margin-bottom: 0 !important;
+}
+
+/* Choose Any 2 / Choose Any 3 area stays on the left */
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-combo-price-row {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+
+    display: grid !important;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr)) !important;
+
+    align-self: start !important;
+
+    width: 100% !important;
+    gap: 18px !important;
+}
+
+/* Place combo choices under their price headings */
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-combo-options {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+
+    align-self: start !important;
+
+    margin-top: 44px !important;
+    padding-right: 12px !important;
+}
+
+/* Keep the choices in two balanced columns */
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-combo-options .tv-list {
+    columns: 2 !important;
+    column-gap: 28px !important;
+
+    margin: 0 !important;
+}
+
+/* Family Specials occupies the right half */
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-family-specials {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+
+    align-self: stretch !important;
+
+    margin: 0 !important;
+    padding: 0 0 0 28px !important;
+
+    border-top: 0 !important;
+    border-left: 2px solid var(--line) !important;
+}
+
+/* Give the Family Specials heading clean spacing */
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-family-specials
+.tv-group-title {
+    margin: 0 0 10px !important;
+}
+
+/* Do not stretch the Family Specials item rows */
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-family-specials
+.tv-items {
+    display: block !important;
+    height: auto !important;
+    min-height: 0 !important;
+}
+
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-family-specials
+.tv-item {
+    min-height: 38px !important;
+    height: auto !important;
+}
+
+/* =========================================================
+   PAGE 2 — FINAL READABILITY POLISH
+   Red subsection headings, larger photos and larger combos
+========================================================= */
+
+/* ---------------------------------------------------------
+   1. SEAFOOD SUBSECTION HEADINGS — RED
+--------------------------------------------------------- */
+
+/* Fish Dinners, Fish by the Piece, Jumbo Shrimp, etc. */
+.tv-page.is-page-two-bands
+.tv-area-seafood
+.tv-group-title {
+    color: var(--blue) !important;
+    font-size: 1.34rem !important;
+    line-height: 1.05 !important;
+    font-weight: 900 !important;
+}
+
+/* Dinners, By the Piece and Large Orders */
+.tv-page.is-page-two-bands
+.tv-area-seafood
+.tv-subheading {
+    color: var(--red) !important;
+    font-size: 1.12rem !important;
+    line-height: 1.05 !important;
+    font-weight: 900 !important;
+
+    margin-top: 18px !important;
+    margin-bottom: 9px !important;
+}
+
+/* Prevent any old underline from appearing */
+.tv-page.is-page-two-bands
+.tv-area-seafood
+.tv-subheading::after {
+    display: none !important;
+    content: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   2. LARGER SEAFOOD PHOTOS
+--------------------------------------------------------- */
+
+.tv-page.is-page-two-bands
+.tv-area-seafood
+.tv-section-images {
+    width: 72% !important;
+    margin: 16px auto 0 !important;
+    gap: 42px !important;
+}
+
+.tv-page.is-page-two-bands
+.tv-area-seafood
+.tv-section-image img {
+    width: 190px !important;
+    height: 135px !important;
+    max-width: 100% !important;
+
+    object-fit: contain !important;
+}
+
+.tv-page.is-page-two-bands
+.tv-area-seafood
+.tv-section-image figcaption {
+    margin-top: 7px !important;
+
+    font-size: 0.9rem !important;
+    line-height: 1.1 !important;
+    font-weight: 800 !important;
+}
+
+
+/* ---------------------------------------------------------
+   3. LARGER COMBOS & FAMILY SPECIALS TITLE
+--------------------------------------------------------- */
+
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-section-title {
+    font-size: 2.05rem !important;
+    line-height: 1 !important;
+}
+
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-section-description,
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-note {
+    font-size: 1rem !important;
+    line-height: 1.2 !important;
+}
+
+
+/* ---------------------------------------------------------
+   4. CHOOSE ANY 2 / CHOOSE ANY 3 — RED AND LARGER
+--------------------------------------------------------- */
+
+/* Choose Any 2 / Choose Any 3 */
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-combo-price strong{
+    color: var(--blue) !important;
+    font-size:1.45rem !important;
+    font-weight:900 !important;
+}
+
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-combo-price span{
+    color: var(--blue) !important;
+    font-size:1.28rem !important;
+    font-weight:900 !important;
+}
+
+/* ---------------------------------------------------------
+   5. LARGER COMBO CHOICES
+--------------------------------------------------------- */
+
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-combo-options {
+    margin-top: 48px !important;
+}
+
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-combo-options
+.tv-list {
+    font-size: 1.06rem !important;
+    line-height: 1.42 !important;
+    font-weight: 750 !important;
+}
+
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-combo-options
+.tv-list li {
+    margin-bottom: 5px !important;
+}
+
+
+/* ---------------------------------------------------------
+   6. FAMILY SPECIALS — RED AND LARGER
+--------------------------------------------------------- */
+
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-family-specials
+.tv-group-title {
+    color: var(--blue) !important;
+
+    font-size: 1.45rem !important;
+    line-height: 1.05 !important;
+    font-weight: 900 !important;
+
+    margin-bottom: 11px !important;
+}
+
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-family-specials
+.tv-item {
+    min-height: 42px !important;
+}
+
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-family-specials
+.tv-item-name {
+    font-size: 1.08rem !important;
+    line-height: 1.15 !important;
+    font-weight: 800 !important;
+}
+
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-family-specials
+.tv-item-price {
+    font-size: 1.08rem !important;
+    line-height: 1.15 !important;
+    font-weight: 900 !important;
+}
+
+/* Blue subsection titles */
+.tv-page.is-page-two-bands .tv-area-food h3,
+.tv-page.is-page-two-bands .tv-area-specials .tv-family-title{
+    color: var(--blue) !important;
+}
+
+/* Red sub-subsection titles */
+.tv-page.is-page-two-bands .tv-area-food h4{
+    color: var(--red) !important;
+}
+
+.tv-page.is-page-two-bands .tv-area-food .tv-large-orders-title{
+    color: var(--red) !important;
+}
+
+/* =========================================================
+   FINAL HEADING + PRICE COLOR CORRECTION
+========================================================= */
+
+/* PAGE 1: Main chicken category names stay BLUE */
+.tv-page.is-horizontal-flow
+.tv-section-chicken
+.tv-group-title {
+    color: var(--blue) !important;
+}
+
+/* PAGE 1: Only DINNERS / WINGZ ONLY / CHICKEN ONLY stay RED */
+.tv-page.is-horizontal-flow
+.tv-section-chicken
+.tv-subheading {
+    color: var(--red) !important;
+}
+
+/* PAGE 1: Seasoning, Sauce and Extra Sauces stay BLUE */
+.tv-page.is-horizontal-flow
+.tv-section-flavors
+.tv-group-title {
+    color: var(--blue) !important;
+}
+
+/* PAGE 2: Fish Dinners, Fish by the Piece,
+   Jumbo Shrimp, Other Shrimp and Catfish Nuggets stay BLUE */
+.tv-page.is-page-two-bands
+.tv-area-seafood
+.tv-group-title {
+    color: var(--blue) !important;
+}
+
+/* PAGE 2: DINNERS / BY THE PIECE / LARGE ORDERS stay RED */
+.tv-page.is-page-two-bands
+.tv-area-seafood
+.tv-subheading {
+    color: var(--red) !important;
+}
+
+/* Choose Any 2 / Choose Any 3 lettering stays BLUE */
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-combo-price strong {
+    color: var(--blue) !important;
+}
+
+/* Only the Choose Any 2 / Choose Any 3 prices stay RED */
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-combo-price span {
+    color: var(--red) !important;
+}
+
+/* Family Specials heading stays BLUE */
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-family-specials
+.tv-group-title {
+    color: var(--blue) !important;
+}
+
+/* All normal displayed prices stay RED */
+.tv-page.is-page-two-bands
+.tv-area-specials
+.tv-item-price {
+    color: var(--red) !important;
+}
+
+/* =========================================================
+   PAGE 3 — SIDE ORDERS TOP / MINI MEALS BOTTOM
+   70% / 30% VERTICAL LAYOUT
+========================================================= */
+
+.tv-page.is-page-three-bands
+.tv-order-flow {
+    display: grid !important;
+
+    grid-template-columns: 1fr !important;
+    grid-template-rows:
+        minmax(0, 7fr)
+        minmax(0, 3fr) !important;
+
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+
+    gap: 18px !important;
+}
+
+/* Remove older row dividers and spacing */
+.tv-page.is-page-three-bands
+.tv-flow-row {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+/* Side Orders occupies the upper 70% */
+.tv-page.is-page-three-bands
+.tv-area-sides {
+    grid-row: 1;
+
+    padding-bottom: 16px !important;
+    border-bottom: 2px solid var(--line) !important;
+}
+
+/* Mini Meals occupies the lower 30% */
+.tv-page.is-page-three-bands
+.tv-area-mini-meals {
+    grid-row: 2;
+}
+
+/* Both sections fill their assigned rows */
+.tv-page.is-page-three-bands
+.tv-section {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+}
+
+/* =========================================================
+   PAGE 3 — FULL-WIDTH SIDE ORDERS
+========================================================= */
+
+.tv-page.is-page-three-bands
+.tv-section-sides {
+    display: grid !important;
+
+    grid-template-rows:
+        auto
+        minmax(0, 1fr) !important;
+
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+}
+
+/* Divide the side orders into two horizontal columns */
+.tv-page.is-page-three-bands
+.tv-section-sides
+.tv-items {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr)) !important;
+
+    grid-auto-flow: column !important;
+    grid-template-rows:
+        repeat(5, auto) !important;
+
+    align-content: start !important;
+
+    column-gap: 52px !important;
+    row-gap: 0 !important;
+
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* Larger side-order rows */
+.tv-page.is-page-three-bands
+.tv-section-sides
+.tv-item {
+    min-height: 54px !important;
+
+    padding: 8px 0 !important;
+
+    font-size: 1.18rem !important;
+}
+
+/* Keep side names and long pricing readable */
+.tv-page.is-page-three-bands
+.tv-section-sides
+.tv-item-name {
+    font-size: 1.18rem !important;
+    line-height: 1.08 !important;
+}
+
+.tv-page.is-page-three-bands
+.tv-section-sides
+.tv-item-price {
+    font-size: 1.05rem !important;
+    line-height: 1.08 !important;
+}
+
+/* =========================================================
+   PAGE 3 — MINI MEALS WITH LARGE PIZZA PUFF PHOTO
+========================================================= */
+
+.tv-page.is-page-three-bands
+.tv-section-mini-meals {
+    display: grid !important;
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(300px, 0.85fr) !important;
+
+    grid-template-rows:
+        auto
+        minmax(0, 1fr) !important;
+
+    column-gap: 46px !important;
+
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+}
+
+/* Mini Meals heading spans the entire bottom section */
+.tv-page.is-page-three-bands
+.tv-section-mini-meals
+.tv-section-header {
+    grid-column: 1 / -1 !important;
+    grid-row: 1 !important;
+}
+
+/* Menu items on the left */
+.tv-page.is-page-three-bands
+.tv-section-mini-meals
+.tv-groups,
+.tv-page.is-page-three-bands
+.tv-section-mini-meals
+.tv-items {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+
+    align-self: start !important;
+
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* Bigger Mini Meal rows */
+.tv-page.is-page-three-bands
+.tv-section-mini-meals
+.tv-item {
+    min-height: 45px !important;
+    padding: 7px 0 !important;
+}
+
+.tv-page.is-page-three-bands
+.tv-section-mini-meals
+.tv-item-name,
+.tv-page.is-page-three-bands
+.tv-section-mini-meals
+.tv-item-price {
+    font-size: 1.13rem !important;
+}
+
+/* Pizza Puffs image on the right */
+.tv-page.is-page-three-bands
+.tv-section-mini-meals
+.tv-section-images {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    margin: 0 !important;
+}
+
+/* Enlarge Pizza Puffs substantially */
+.tv-page.is-page-three-bands
+.tv-section-mini-meals
+.tv-section-image {
+    width: 100% !important;
+    max-width: 420px !important;
+}
+
+.tv-page.is-page-three-bands
+.tv-section-mini-meals
+.tv-section-image img {
+    display: block !important;
+
+    width: 100% !important;
+    height: 220px !important;
+
+    margin: 0 auto !important;
+
+    object-fit: contain !important;
+}
+
+.tv-page.is-page-three-bands
+.tv-section-mini-meals
+.tv-section-image figcaption {
+    margin-top: 8px !important;
+
+    font-size: 1rem !important;
+    font-weight: 900 !important;
+}
+
+/* PAGE 3 — KEEP PIZZA PUFF CAPTION VISIBLE */
+.tv-page.is-page-three-bands
+.tv-section-mini-meals
+.tv-section-image {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.tv-page.is-page-three-bands
+.tv-section-mini-meals
+.tv-section-image figcaption {
+    display: block !important;
+    flex: 0 0 auto !important;
+
+    margin-top: 8px !important;
+
+    color: var(--blue) !important;
+    font-size: 1rem !important;
+    font-weight: 900 !important;
+    line-height: 1.1 !important;
+}
