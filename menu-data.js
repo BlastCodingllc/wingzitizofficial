@@ -2347,7 +2347,7 @@ secondSubTags: [
 
     items: [
         {
-            name: 'Slushy Lemonade — Strawberry, Grape, or Blueberry',
+            name: 'Slushy Lemonade — Lemon, Strawberry, Grape, or Blueberry',
             price: '$3.49'
         }
     ]
