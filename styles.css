@@ -5268,3 +5268,34 @@ body.modal-open {
     position: relative !important;
     left: -125px !important;
 }
+
+/* Slushy Lemonades — mobile */
+@media (max-width: 768px) {
+
+    .menu-photo-slushies {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        overflow: hidden !important;
+    }
+
+    .menu-photo-slushies img {
+        display: block !important;
+
+        /* Fit entire 4-cup image inside screen */
+        width: 90% !important;
+        max-width: 360px !important;
+        height: auto !important;
+        object-fit: contain !important;
+
+        /* Remove desktop positioning */
+        position: static !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+
+        margin: 20px auto 0 !important;
+    }
+}
