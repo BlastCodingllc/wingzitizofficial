@@ -2331,18 +2331,27 @@ secondSubTags: [
        DRINKS
     ====================================================== */
 
-    {
-        id: 'drinks',
-        title: 'Drinks',
-        layout: 'flat',
+{
+    id: 'drinks',
+    title: 'Drinks',
+    layout: 'flat',
 
-        items: [
-            {
-                name: 'Slushy Lemonade — Strawberry, Grape, or Blueberry',
-                price: '$3.49'
-            }
-        ]
-    }
+    images: [
+        {
+            className: 'menu-photo-slushies',
+            label: 'Slushy Lemonades',
+            src: 'assets/photos/menu/slushies.png',
+            alt: 'Wingz It Iz colorful frozen slushy lemonades'
+        }
+    ],
+
+    items: [
+        {
+            name: 'Slushy Lemonade — Strawberry, Grape, or Blueberry',
+            price: '$3.49'
+        }
+    ]
+}
 ];
 
 const menuData = {

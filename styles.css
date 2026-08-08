@@ -5237,3 +5237,34 @@ body.modal-open {
         z-index: 50 !important;
     }
 }
+
+/* Hickory Hills Slushy Lemonades */
+.menu-photo-slushies {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.menu-photo-slushies img {
+    display: block !important;
+    width: 600px !important;
+    max-width: none !important;
+    height: auto !important;
+
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    margin: 0 auto !important;
+}
+
+.menu-photo-slushies img {
+    display: block !important;
+    width: 600px !important;
+    max-width: none !important;
+    height: auto !important;
+
+    position: relative !important;
+    left: -125px !important;
+}
